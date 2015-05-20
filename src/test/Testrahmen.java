@@ -5,8 +5,11 @@ import model.kunde.AKunde;
 import util.KundenNummerVergeber;
 import control.Kundenverwaltung;
 import java.util.Collections;
+import java.util.Random;
 import model.kunde.Adresse;
 import model.kunde.Endverbraucher;
+import model.kunde.GesellschaftMitLiz;
+import model.kunde.Grossverbraucher;
 
 /**
  * Beschreibung:
@@ -103,13 +106,37 @@ public class Testrahmen {
     private void createKunden() throws Exception {
         System.out.println("Anzahl der Kunden eingeben");
         int anzahl = Eingabe.liesAnzahl();
+        Random ran = new Random();
 
         for (int i = 0; i < anzahl; i++) {
-            AKunde temp = new Endverbraucher(new Adresse(i + 1 + ". Endverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), true);
-            temp.setNummer(knv.getKundennummer());
-            kv.neuEndverbraucher(temp);
+            AKunde temp;
+
+            switch ((int) Math.floor((Math.random() * 3) + 1)) {
+                // Endverbraucher
+                case 1:
+                    temp = new Endverbraucher(new Adresse(i + 1 + ". Endverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), true);
+                    temp.setNummer(knv.getKundennummer());
+                    kv.neuEndverbraucher(temp);
+                    break;
+                    // Großverbraucher
+                case 2:
+                    temp = new Grossverbraucher(new Adresse(i + 1 + ". Großverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), (int) Math.floor((Math.random() * 100) + 1));
+                    temp.setNummer(knv.getKundennummer());
+                    kv.neuGrossverbraucher(temp);
+                    break;
+                // Gesellschaft
+                case 3:
+                    temp = new GesellschaftMitLiz(new Adresse(i + 1 + ". Gesellschaft", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), (int) Math.floor((Math.random() * 100) + 1));
+                    temp.setNummer(knv.getKundennummer());
+                    kv.neuGesellschaftMitLiz(temp);
+                    break;
+                default:
+                    System.err.println("Falsche Zufallszahl");
+                    break;
+            }
+
         }
-        System.out.println(anzahl + " Kunden wurden angelegt.\n");
+        System.out.println("Es wurden " + anzahl + " Kunden angelegt.\n");
     }
 
 }

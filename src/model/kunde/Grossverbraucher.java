@@ -132,8 +132,9 @@ public class Grossverbraucher extends AKunde {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" + "Grossverbraucher:" + "\n\tStatus = " + status + 
-                                                               "\n\tRabatt = " + this.rabatt + 
+        return //super.toString() + "\n" + 
+                "Grossverbraucher:" + "\n\tStatus = " + status + 
+                                                               "\n\tRabatt = " + this.rabatt + " %" +
                                                                "\n\tAnschrift = " + this.anschrift + 
                                                                "\n\tNummer = " + this.nummer;
     }

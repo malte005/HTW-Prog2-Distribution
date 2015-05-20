@@ -37,22 +37,23 @@ public class Endverbraucher extends AKunde {
 //    public Endverbraucher(double rabatt) {
 //        super(rabatt);
 //    }
-
     /**
      * Konstruktor
-     * @param rabatt Der Rabatt des Endkunden
+     *
+     * @param rabatt   Der Rabatt des Endkunden
      * @param bonitaet Die Bonität des Endkunden
      */
     private Endverbraucher(double rabatt, boolean bonitaet) {
         super(rabatt);
         this.bonitaet = bonitaet;
     }
-    
+
     /**
      * Konstruktor
+     *
      * @param anschrift Die Adersse des Endkunden
-     * @param rabatt Der Rabatt des Endkunden
-     * @param bonitaet Die Bonität des Endkunden
+     * @param rabatt    Der Rabatt des Endkunden
+     * @param bonitaet  Die Bonität des Endkunden
      */
     public Endverbraucher(Adresse anschrift, double rabatt, boolean bonitaet) {
         super(rabatt);
@@ -110,7 +111,7 @@ public class Endverbraucher extends AKunde {
     public void setRabatt(double rabatt) {
         this.rabatt = rabatt;
     }
-    
+
     /**
      *
      * @return Die Kundennummer wird zurückegeben.
@@ -128,13 +129,14 @@ public class Endverbraucher extends AKunde {
     public void setNummer(String nummer) {
         this.nummer = nummer;
     }
-    
+
     @Override
     public String toString() {
-        return super.toString() + "\n" + "Endverbraucher:" + "\n\tBonitaet = " + this.bonitaet + 
-                                                             "\n\tRabatt = " + this.RABATT + 
-                                                             "\n\tAnschrift = " + this.anschrift + 
-                                                             "\n\tNummer = " + this.nummer;
+        return // super.toString() +  "\n" +
+                "Endverbraucher:" + "\n\tBonitaet = " + this.bonitaet
+                + "\n\tRabatt = " + this.RABATT + " %"
+                + "\n\tAnschrift = " + this.anschrift
+                + "\n\tNummer = " + this.nummer;
     }
 
 }

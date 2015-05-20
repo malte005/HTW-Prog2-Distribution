@@ -143,6 +143,8 @@ public abstract class Eingabe {
      */
     private static Adresse liesAdresse() throws Exception {
         Adresse anschrift;
+        boolean plz_ok = false;
+        String plz;
 
         try {
             System.out.println("Kundennamen eingaben:");
@@ -152,13 +154,20 @@ public abstract class Eingabe {
             String str_hnr = scanner.next();
 
             System.out.println("Postleitzahl eingaben:");
-            String plz = scanner.next();
+            do {
+                plz = scanner.next();
+                if (plz.length() == 6) {
+                    plz_ok = true;
+                } else {
+                    System.err.println("Bitte eine 6-stellige PLZ eingeben.");
+                }
+            } while (!plz_ok);
 
             System.out.println("Ort eingaben:");
             String ort = scanner.next();
 
             anschrift = new Adresse(name, str_hnr, plz, ort);
-            
+
         } catch (IllegalStateException | InputMismatchException e) {
             scanner.next();
             throw new Exception("Eingabefehler...");

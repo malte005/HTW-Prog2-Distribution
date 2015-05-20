@@ -133,8 +133,9 @@ public class GesellschaftMitLiz extends AKunde {
     
     @Override
     public String toString() {
-        return super.toString() + "\n" + "Gesellschaft Mit Lizenzvertrieb:" + "\n\tVertrieb = " + vertrieb + 
-                                                                 "\n\tRabatt = " + this.rabatt + 
+        return //super.toString() + "\n" + 
+                "Gesellschaft Mit Lizenzvertrieb:" + "\n\tVertrieb = " + vertrieb + 
+                                                                 "\n\tRabatt = " + this.rabatt + " %" +
                                                                  "\n\tAnschrift = " + this.anschrift + 
                                                                  "\n\tNummer = " + this.nummer;
     }
