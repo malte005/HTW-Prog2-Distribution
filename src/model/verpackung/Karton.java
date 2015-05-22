@@ -1,7 +1,6 @@
 package model.verpackung;
 
 /**
- * Beschreibung:
  * Diese Klasse bilden das Kind-Objekt der Verpackungseinheit-Klasse als Karton.
  *
  * @author Malte Dammann
@@ -20,20 +19,22 @@ package model.verpackung;
  */
 public class Karton extends AVerpackungseinheit {
 
-    private int anzahlFlaschen = 12;
+    private static final int STANDARD_ANZAHL_FLASCHEN = 12;
 
     /**
      * Konstruktor
      */
     public Karton() {
+        super(STANDARD_ANZAHL_FLASCHEN);
     }
 
     /**
      * Konstruktor
-     * @param anzahlFlaschen
+     *
+     * @param anzahlFlaschen Die Anzahl der Flaschen wird übergeben.
      */
     public Karton(int anzahlFlaschen) {
-        this.anzahlFlaschen = anzahlFlaschen;
+        super(anzahlFlaschen);
     }
 
     /**
@@ -47,7 +48,7 @@ public class Karton extends AVerpackungseinheit {
 
     /**
      *
-     * @param anzahlFlaschen Anzahl der Flaschen
+     * @param anzahlFlaschen Die Anzahl der Flaschen fürd übergeben.
      */
     @Override
     public void setAnzahlFlaschen(int anzahlFlaschen) {

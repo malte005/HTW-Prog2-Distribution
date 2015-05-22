@@ -4,7 +4,6 @@ import control.Kundenverwaltung;
 import java.util.Random;
 
 /**
- * Beschreibung:
  * Diese Klasse erzeugt eine eindeutige Kundennummer für jeden Kunden.
  *
  * @author Malte Dammann
@@ -45,7 +44,7 @@ public class KundenNummerVergeber {
     /**
      * Konstruktor
      *
-     * @return Objekt von KundenNummerVergeber
+     * @return Objekt von KundenNummerVergeber wird zurückgegeben.
      */
     private KundenNummerVergeber() {
     }
@@ -53,7 +52,7 @@ public class KundenNummerVergeber {
     /**
      * Erzeugt eine neue Kundennummer für den Kunden.
      *
-     * @return Die 9-Stellige Kundennummer.
+     * @return Die 9-Stellige Kundennummer wird zurückgegeben.
      */
     public String getKundennummer() {
         kv = new Kundenverwaltung();
@@ -68,7 +67,7 @@ public class KundenNummerVergeber {
     /**
      * Erzeugt einen Zufallsstring der die Kundennummer wiederspiegelt.
      *
-     * @return Die zufällige Kundennummer.
+     * @return Die zufällige Kundennummer wird zurückgegebn.
      */
     private String erzeugeZufallsString() {
         String erg = "";
@@ -91,7 +90,7 @@ public class KundenNummerVergeber {
     /**
      * Erzeugt für die Kundennummer die Kleinbuchstaben.
      *
-     * @return Einen zufälligen Kleinbuchstaben.
+     * @return Ein zufälliger Kleinbuchstabe wird zurückgegeben.
      */
     private char erzeugeZufallsLower() {
         Random rand = new Random();
@@ -104,7 +103,7 @@ public class KundenNummerVergeber {
     /**
      * Erzeugt für die Kundennummer die Großbuchstaben.
      *
-     * @return Einen zufälligen Großbuchstaben.
+     * @return Ein zufälliger Großbuchstabe wird zurückgegeben.
      */
     private char erzeugeZufallsUpper() {
         Random rand = new Random();
@@ -116,7 +115,7 @@ public class KundenNummerVergeber {
     /**
      * Erzeugt für die Kundennummer die Zahlen.
      *
-     * @return Eine zufällige Zahl zwischen 0 und 9.
+     * @return Eine zufällige Zahl zwischen 0 und 9 wird zurückgegeben.
      */
     private char erzeugeZufallsZahlen() {
         Random rand = new Random();

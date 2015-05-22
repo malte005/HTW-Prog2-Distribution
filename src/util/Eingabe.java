@@ -9,7 +9,6 @@ import model.kunde.GesellschaftMitLiz;
 import model.kunde.Grossverbraucher;
 
 /**
- * Beschreibung:
  * Diese Klasse handelt das Einlesen eines Kunden durch den Benutzer.
  *
  * @author Malte Dammann
@@ -54,7 +53,7 @@ public abstract class Eingabe {
         Adresse anschrift = liesAdresse();
 
         try {
-            System.out.println("Rabatt eingeben:");
+            System.out.println("Achtung, der Standard-Rabatt beträgt 0%.Rabatt eingeben:");
             rabatt = liesRabatt();
 
             System.out.println("Bonität? (ja/nein)");
@@ -86,7 +85,7 @@ public abstract class Eingabe {
         Adresse anschrift = liesAdresse();
 
         try {
-            System.out.println("Rabatt eingeben:");
+            System.out.println("Achtung, der Standard-Rabatt beträgt 5%. Rabatt eingeben:");
             rabatt = liesRabatt();
 
             System.out.println("Status eingeben:");
@@ -118,7 +117,7 @@ public abstract class Eingabe {
         Adresse anschrift = liesAdresse();
 
         try {
-            System.out.println("Rabatt eingeben:");
+            System.out.println("Achtung, der Standard-Rabatt beträgt 7%. Rabatt eingeben:");
             rabatt = liesRabatt();
 
             System.out.println("Vertrieb eingeben:");
@@ -177,9 +176,9 @@ public abstract class Eingabe {
     }
 
     /**
-     * Liest die Usereingabe für den Rabatt
+     * Liest die Usereingabe für den Rabatt ein.
      *
-     * @return DIe eingegebene duale Zahl
+     * @return Die eingegebene duale Zahl wird zurückgegeben.
      */
     private static Double liesRabatt() {
         double rabatt = 0.0;
@@ -205,9 +204,9 @@ public abstract class Eingabe {
     }
 
     /**
-     * Liest die Usereingabe für den Status oder die Vertriebszahl
+     * Liest die Usereingabe für den Status oder die Vertriebszahl.
      *
-     * @return DIe eingegebene ganze Zahl
+     * @return Die eingegebene ganze Zahl wird zurückgegeben.
      */
     private static int liesStatusOderVertrieb() {
         int value = 0;
@@ -229,9 +228,9 @@ public abstract class Eingabe {
     }
 
     /**
-     * Liest die Usereingabe für die Bonität
+     * Liest die Usereingabe für die Bonität ein.
      *
-     * @return Ob der Kunde eine Bonität hat
+     * @return Ob der Kunde eine Bonität hat.
      */
     private static boolean liesBoni() {
         boolean boni = true, eingabeFehler = true;
@@ -255,9 +254,9 @@ public abstract class Eingabe {
     }
 
     /**
-     * Liest die Usereingabe für das Menü
+     * Liest die Usereingabe für das Menü ein.
      *
-     * @return DIe eingegebene ganze Zahl
+     * @return Die eingegebene ganze Zahl wird zurückgegeben.
      */
     public static int liesMenu() {
         int value = 0;
@@ -284,9 +283,9 @@ public abstract class Eingabe {
     }
 
     /**
-     * Liest die Usereingabe für die Anzahl der zu erzeugenden Kunden
+     * Liest die Usereingabe für die Anzahl der zu erzeugenden Kunden.
      *
-     * @return DIe eingegebene ganze Zahl
+     * @return Die eingegebene ganze Zahl wird zurückgegebn.
      */
     public static int liesAnzahl() {
         int value = 0;

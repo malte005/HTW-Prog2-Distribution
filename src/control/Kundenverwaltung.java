@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import model.kunde.AKunde;
 
 /**
- * Beschreibung:
  * Diese Klasse verwaltet die Kunden.
  *
  * @author Malte Dammann
@@ -24,7 +23,7 @@ import model.kunde.AKunde;
  */
 public class Kundenverwaltung implements Comparator<AKunde> {
 
-    public final LinkedList<AKunde> KUNDENLISTE = new LinkedList<AKunde>();
+    public final LinkedList<AKunde> KUNDENLISTE = new LinkedList<>();
 
     /**
      * Konstruktor
@@ -34,7 +33,8 @@ public class Kundenverwaltung implements Comparator<AKunde> {
 
     /**
      * Fügt ein Kunden-Objekt zur Kunden-Liste hinzu.
-     * @param kunde Kundenobjekt
+     *
+     * @param kunde Kundenobjekt wird übergeben
      */
     public void addKunde(AKunde kunde) {
         KUNDENLISTE.add(kunde);
@@ -42,37 +42,38 @@ public class Kundenverwaltung implements Comparator<AKunde> {
 
     /**
      * Löscht das gewünschte Kundenobjekt aus der Liste.
-     * @param kunde Kundenobjekt
+     *
+     * @param kunde Kundenobjekt wird übergeben
      */
     public void removeKunde(AKunde kunde) {
         KUNDENLISTE.remove(kunde);
     }
 
     /**
-     * Legt einen Großverbraucher an, speichert ihn in der Kundenliste ab und 
+     * Legt einen Großverbraucher an, speichert ihn in der Kundenliste ab und
      * gibt ein AKundenobjekt zurück.
-     * @param gv Großverbraucher Objekt
-     * @return AKunde-Objekt wird zurückgegeben.
+     *
+     * @param kunde AKunde-Objekt wird übergeben
      */
     public void neuGrossverbraucher(AKunde kunde) {
         addKunde(kunde);
     }
 
     /**
-     * Legt einen Endverbracuher an, speichert ihn in der Kundenliste ab und 
+     * Legt einen Endverbracuher an, speichert ihn in der Kundenliste ab und
      * gibt ein AKundenobjekt zurück.
-     * @param ev Eindverbraucher Objekt
-     * @return AKunde-Objekt wird zurückgegeben.
+     *
+     * @param kunde AKunde-Objekt wird übergeben
      */
     public void neuEndverbraucher(AKunde kunde) {
         addKunde(kunde);
     }
 
     /**
-     * Legt einen Gesellschafter an, speichert ihn in der Kundenliste ab und 
+     * Legt einen Gesellschafter an, speichert ihn in der Kundenliste ab und
      * gibt ein AKundenobjekt zurück.
-     * @param gml Gesellschaft mit Lizenz - Objekt
-     * @return AKunde-Objekt wird zurückgegeben.
+     *
+     * @param kunde AKunde-Objekt wird übergeben
      */
     public void neuGesellschaftMitLiz(AKunde kunde) {
         addKunde(kunde);
@@ -81,7 +82,8 @@ public class Kundenverwaltung implements Comparator<AKunde> {
     /**
      * Guckt ob Kundennummer schon in der Kundenliste vorhanden ist.
      *
-     * @param kNr
+     * @param kNr Kundennummer wird als String übergeben
+     *
      * @return Ob Kundennummer noch nicht vergeben wurde.
      */
     public boolean isKNrAvailable(String kNr) {

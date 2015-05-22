@@ -1,7 +1,6 @@
 package model.kunde;
 
 /**
- * Beschreibung:
  * Diese Klasse bilden das Kind-Objekt der Kundenklasse als Endverbraucher.
  *
  * @author Malte Dammann
@@ -20,28 +19,21 @@ package model.kunde;
  */
 public class Endverbraucher extends AKunde {
 
-    private static final double RABATT = 0.00;
-    private static boolean bonitaet = false;
+    private static final double STANDARD_RABATT = 0.00;
+    private boolean bonitaet;
 
     /**
-     * Konstruktor
+     * Konstruktor der nicht gebraucht wird
      */
     private Endverbraucher() {
-        super(RABATT);
+        super(STANDARD_RABATT);
     }
 
-//    /**
-//     * Konstruktor
-//     * @param rabatt Der Rabatt des Endkunden
-//     */
-//    public Endverbraucher(double rabatt) {
-//        super(rabatt);
-//    }
     /**
-     * Konstruktor
+     * Konstruktor der nicht gebraucht wird
      *
-     * @param rabatt   Der Rabatt des Endkunden
-     * @param bonitaet Die Bonität des Endkunden
+     * @param rabatt   Der Rabatt des Endkunden.
+     * @param bonitaet Die Bonität des Endkunden.
      */
     private Endverbraucher(double rabatt, boolean bonitaet) {
         super(rabatt);
@@ -51,14 +43,14 @@ public class Endverbraucher extends AKunde {
     /**
      * Konstruktor
      *
-     * @param anschrift Die Adersse des Endkunden
-     * @param rabatt    Der Rabatt des Endkunden
-     * @param bonitaet  Die Bonität des Endkunden
+     * @param anschrift Die Adersse des Endkunden.
+     * @param rabatt    Der Rabatt des Endkunden.
+     * @param bonitaet  Die Bonität des Endkunden.
      */
     public Endverbraucher(Adresse anschrift, double rabatt, boolean bonitaet) {
-        super(rabatt);
+        this(rabatt, bonitaet);
         this.anschrift = anschrift;
-        this.bonitaet = bonitaet;
+        
     }
 
     /**
@@ -71,7 +63,7 @@ public class Endverbraucher extends AKunde {
 
     /**
      *
-     * @param bonitaet Die Bonität des Endkunden
+     * @param bonitaet Die Bonität des Endkunden wird übergaben.
      */
     public void setBonitaet(boolean bonitaet) {
         this.bonitaet = bonitaet;
@@ -88,7 +80,7 @@ public class Endverbraucher extends AKunde {
 
     /**
      *
-     * @param anschrift Die Adresse des Endkunden
+     * @param anschrift Die Adresse des Endkunden wird übergaben.
      */
     @Override
     public void setAnschrift(Adresse anschrift) {
@@ -101,15 +93,16 @@ public class Endverbraucher extends AKunde {
      */
     @Override
     public double getRabatt() {
-        return this.RABATT;
+        return this.rabatt;
     }
 
     /**
      *
-     * @param rabatt Der Rabatt des Endkunden
+     * @param rabatt Der Rabatt des Endkunden wird übergaben.
      */
+    @Override
     public void setRabatt(double rabatt) {
-        this.rabatt = rabatt;
+        this.rabatt = STANDARD_RABATT;
     }
 
     /**
@@ -123,7 +116,7 @@ public class Endverbraucher extends AKunde {
 
     /**
      *
-     * @param nummer Die Kundennummer des Endkunden
+     * @param nummer Die Kundennummer des Endkunden wird übergaben.
      */
     @Override
     public void setNummer(String nummer) {
@@ -133,10 +126,11 @@ public class Endverbraucher extends AKunde {
     @Override
     public String toString() {
         return // super.toString() +  "\n" +
-                "Endverbraucher:" + "\n\tBonitaet = " + this.bonitaet
-                + "\n\tRabatt = " + this.RABATT + " %"
-                + "\n\tAnschrift = " + this.anschrift
-                + "\n\tNummer = " + this.nummer;
+                "Endverbraucher:"
+                + "\n\tNummer = " + this.nummer
+                + "\n\tBonitaet = " + this.bonitaet
+                + "\n\tRabatt = " + this.rabatt + " %"
+                + "\nAnschrift:" + this.anschrift;
     }
 
 }

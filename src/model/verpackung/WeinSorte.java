@@ -1,8 +1,6 @@
-
 package model.verpackung;
 
 /**
- * Beschreibung:
  * Diese Klasse das Objekt der Weinsorte ab.
  *
  * @author Malte Dammann
@@ -20,14 +18,15 @@ package model.verpackung;
  *
  */
 public class WeinSorte {
-    
+
     private String weinsorte;
     private double preis;
 
     /**
      * Konstruktor
-     * @param weinsorte
-     * @param preis
+     *
+     * @param weinsorte Die Weinsorte wird als String übergeben.
+     * @param preis     Der Preis der Weinsorte wird übergeben.
      */
     public WeinSorte(String weinsorte, double preis) {
         this.weinsorte = weinsorte;
@@ -44,7 +43,7 @@ public class WeinSorte {
 
     /**
      *
-     * @param weinsorte Die Weinsorte
+     * @param weinsorte Die Weinsorte wird übergeben.
      */
     public void setWeinsorte(String weinsorte) {
         this.weinsorte = weinsorte;
@@ -60,7 +59,7 @@ public class WeinSorte {
 
     /**
      *
-     * @param preis Der Preis der Weinsorte
+     * @param preis Der Preis der Weinsorte wird übergeben.
      */
     public void setPreis(double preis) {
         this.preis = preis;
@@ -70,7 +69,5 @@ public class WeinSorte {
     public String toString() {
         return "WeinSorte{" + "weinsorte=" + weinsorte + ", preis=" + preis + '}';
     }
-    
-    
 
 }

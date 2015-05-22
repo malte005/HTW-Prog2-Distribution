@@ -1,7 +1,6 @@
 package model.verpackung;
 
 /**
- * Beschreibung:
  * Diese Klasse bilden das Kind-Objekt der Verpackungseinheit-Klasse als Flasche.
  *
  * @author Malte Dammann
@@ -15,30 +14,32 @@ package model.verpackung;
  * Java: 1.8.0_20; Java HotSpot(TM) 64-Bit
  *
  * @since 2015-05-05
- * @version 0.1
+ * @version 0.2
  *
  */
 public class Flasche extends AVerpackungseinheit {
 
-    private int anzahlFlaschen = 1;
+    private static final int STANDARD_ANZAHL_FLASCHEN = 1;
 
     /**
      * Konstruktor
      */
     public Flasche() {
+        super(STANDARD_ANZAHL_FLASCHEN);
     }
 
     /**
      * Konstruktor
-     * @param anzahlFlaschen
+     *
+     * @param anzahlFlaschen Die Anzahl der Flaschen wird übrgeben.
      */
     public Flasche(int anzahlFlaschen) {
-        this.anzahlFlaschen = anzahlFlaschen;
+        super(anzahlFlaschen);
     }
 
     /**
      *
-     * @return Anzahl Flaschen.
+     * @return Anzahl Flaschenwird zurückgegeben.
      */
     @Override
     public int getAnzahlFlaschen() {
@@ -47,7 +48,7 @@ public class Flasche extends AVerpackungseinheit {
 
     /**
      *
-     * @param anzahlFlaschen Anzahl der Flaschen
+     * @param anzahlFlaschen Anzahl der Flaschen wird übergeben.
      */
     @Override
     public void setAnzahlFlaschen(int anzahlFlaschen) {

@@ -1,7 +1,6 @@
 package model.kunde;
 
 /**
- * Beschreibung:
  * Diese Klasse ist die Parent-Klasse zu den einzelnen Kunden.
  *
  * @author Malte Dammann
@@ -26,22 +25,47 @@ public abstract class AKunde {
 
     /**
      * Konstruktor
+     *
      * @param rabatt Der Rabatt des Kunden
      */
     public AKunde(double rabatt) {
         this.rabatt = rabatt;
     }
 
+    /**
+     *
+     * @return Das Adressen-Objekt wird zurückgegeben.
+     */
     public abstract Adresse getAnschrift();
 
+    /**
+     *
+     * @param anschrift Das Adressen-Objekt wird übergeben.
+     */
     public abstract void setAnschrift(Adresse anschrift);
 
+    /**
+     *
+     * @return Der Rabatt wird zurückgeggeben.
+     */
     public abstract double getRabatt();
 
+    /**
+     *
+     * @param rabatt Der Rabatt wird übergeben.
+     */
     public abstract void setRabatt(double rabatt);
 
+    /**
+     *
+     * @return Die Kundennummer wird zurückgegeben.
+     */
     public abstract String getNummer();
-    
+
+    /**
+     *
+     * @param nummer Die Kudnennummer wird übergeben.
+     */
     public abstract void setNummer(String nummer);
 
     @Override

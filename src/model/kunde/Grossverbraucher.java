@@ -1,7 +1,6 @@
 package model.kunde;
 
 /**
- * Beschreibung:
  * Diese Klasse bilden das Kind-Objekt der Kundenklasse als Großverbraucher.
  *
  * @author Malte Dammann
@@ -20,44 +19,37 @@ package model.kunde;
  */
 public class Grossverbraucher extends AKunde {
 
-    private static int status = 0;
-    private static double rabatt = 5.00;
+    private static final double STANDARD_RABATT = 5.00;
+    private int status;
 
     /**
-     * Konstruktor
+     * Konstruktor der nicht gebraucht wird
      */
     private Grossverbraucher() {
-        this(rabatt, status);
+        super(STANDARD_RABATT);
     }
 
     /**
-     * Konstruktor
-     * @param rabatt Rabatt des Großverbracuhers.
-     */
-    private Grossverbraucher(double rabatt) {
-        super(rabatt);
-    }
-
-    /**
-     * Konstruktor
-     * @param rabatt
-     * @param status
+     * Konstruktor der nicht gebraucht wird
+     *
+     * @param rabatt Der Rabatt des Großverbrauchers.
+     * @param status Der Status des Großverbrauchers.
      */
     private Grossverbraucher(double rabatt, int status) {
         super(rabatt);
         this.status = status;
     }
-    
+
     /**
      * Konstruktor
-     * @param anschrift
-     * @param rabatt
-     * @param status
+     *
+     * @param anschrift Die Anschrift des Großverbrauchers.
+     * @param rabatt    Der Rabatt des Großverbrauchers.
+     * @param status    Der Status des Großverbrauchers.
      */
     public Grossverbraucher(Adresse anschrift, double rabatt, int status) {
-        this(rabatt);
+        this(rabatt, status);
         this.anschrift = anschrift;
-        this.status = status;
     }
 
     /**
@@ -70,7 +62,7 @@ public class Grossverbraucher extends AKunde {
 
     /**
      *
-     * @param status Der Status 
+     * @param status Der Status
      */
     public void setStatus(int status) {
         this.status = status;
@@ -87,7 +79,7 @@ public class Grossverbraucher extends AKunde {
 
     /**
      *
-     * @param anschrift Die Adresse des Kunden
+     * @param anschrift Die Adresse des Kunden wird übergaben.
      */
     @Override
     public void setAnschrift(Adresse anschrift) {
@@ -105,11 +97,11 @@ public class Grossverbraucher extends AKunde {
 
     /**
      *
-     * @param rabatt Der Rabatt
+     * @param rabatt Der Rabatt wird übergaben.
      */
     @Override
     public void setRabatt(double rabatt) {
-        this.rabatt = rabatt;
+        this.rabatt = STANDARD_RABATT;
     }
 
     /**
@@ -123,7 +115,7 @@ public class Grossverbraucher extends AKunde {
 
     /**
      *
-     * @param nummer Die Kundennummer
+     * @param nummer Die Kundennummer wird übergaben.
      */
     @Override
     public void setNummer(String nummer) {
@@ -133,9 +125,10 @@ public class Grossverbraucher extends AKunde {
     @Override
     public String toString() {
         return //super.toString() + "\n" + 
-                "Grossverbraucher:" + "\n\tStatus = " + status + 
-                                                               "\n\tRabatt = " + this.rabatt + " %" +
-                                                               "\n\tAnschrift = " + this.anschrift + 
-                                                               "\n\tNummer = " + this.nummer;
+                "Grossverbraucher:"
+                + "\n\tNummer = " + this.nummer
+                + "\n\tStatus = " + status
+                + "\n\tRabatt = " + this.rabatt + " %"
+                + "\nAnschrift: " + this.anschrift;
     }
 }

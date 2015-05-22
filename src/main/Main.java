@@ -3,7 +3,6 @@ package main;
 import test.Testrahmen;
 
 /**
- * Beschreibung:
  * Diese Klasse ist der Einstiegspunkt in das Programm.
  *
  * @author Malte Dammann

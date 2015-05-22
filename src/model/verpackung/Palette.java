@@ -1,7 +1,6 @@
 package model.verpackung;
 
 /**
- * Beschreibung:
  * Diese Klasse bilden das Kind-Objekt der Verpackungseinheit-Klasse als Palette.
  *
  * @author Malte Dammann
@@ -20,20 +19,22 @@ package model.verpackung;
  */
 public class Palette extends AVerpackungseinheit {
 
-    private int anzahlFlaschen = 36;
+    private static final int STANDARD_ANZAHL_FLASCHEN = 36;
 
     /**
      * Konstruktor
      */
     public Palette() {
+        super(STANDARD_ANZAHL_FLASCHEN);
     }
 
     /**
      * Konstruktor
-     * @param anzahlFlaschen
+     *
+     * @param anzahlFlaschen Die Anzahl der Flaschen wird übergeben.
      */
     public Palette(int anzahlFlaschen) {
-        this.anzahlFlaschen = anzahlFlaschen;
+        super(anzahlFlaschen);
     }
 
     /**
@@ -47,7 +48,7 @@ public class Palette extends AVerpackungseinheit {
 
     /**
      *
-     * @param anzahlFlaschen Anzahl der Flaschen
+     * @param anzahlFlaschen Die Anzahl der Flaschen wird übergben.
      */
     @Override
     public void setAnzahlFlaschen(int anzahlFlaschen) {

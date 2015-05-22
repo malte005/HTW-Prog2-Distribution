@@ -1,7 +1,6 @@
 package model.verpackung;
 
 /**
- * Beschreibung:
  * Diese Klasse bilden das Eltern-Objekt für die Verpackungseinheiten ab.
  *
  * @author Malte Dammann
@@ -22,24 +21,26 @@ public abstract class AVerpackungseinheit {
 
     protected int anzahlFlaschen = 1;
 
-    // EINGENTLICH NICHT SO IN DER AUFGABE
     /**
      * Konstruktor
-     */
-    public AVerpackungseinheit() {
-    }
-
-    /**
-     * Konstruktor
-     * @param anzahlFlaschen
+     *
+     * @param anzahlFlaschen Die Anzahl der Flaschen wird übergeben.
      */
     public AVerpackungseinheit(int anzahlFlaschen) {
         this.anzahlFlaschen = anzahlFlaschen;
     }
 
-    abstract int getAnzahlFlaschen();
+    /**
+     *
+     * @return Die Anzahl der Flaschen wird zurückgegeben.
+     */
+    public abstract int getAnzahlFlaschen();
 
-    abstract void setAnzahlFlaschen(int anzahlFlaschen);
+    /**
+     *
+     * @param anzahlFlaschen Die Anzahl der Flaschen wird übergeben.
+     */
+    public abstract void setAnzahlFlaschen(int anzahlFlaschen);
 
     @Override
     public String toString() {

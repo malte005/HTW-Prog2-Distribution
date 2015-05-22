@@ -1,8 +1,7 @@
 package model.kunde;
 
 /**
- * Beschreibung:
- * Diese Klasse bilden das Kind-Objekt der Kundenklasse als Gesellschaft mit 
+ * Diese Klasse bilden das Kind-Objekt der Kundenklasse als Gesellschaft mit
  * Lizenzvertrieb.
  *
  * @author Malte Dammann
@@ -21,44 +20,37 @@ package model.kunde;
  */
 public class GesellschaftMitLiz extends AKunde {
 
-    private static double rabatt = 0.07;
-    private static int vertrieb = 0;
+    private static final double STANDARD_RABATT = 7.00;
+    private int vertrieb;
 
     /**
-     * Default Kontruktor
+     * Default Kontruktor der nicht gebraucht wird
      */
     private GesellschaftMitLiz() {
-        super(rabatt);
+        super(STANDARD_RABATT);
     }
 
-//    /**
-//     * Konstruktor
-//     * @param rabatt
-//     */
-//    private GesellschaftMitLiz(double rabatt) {
-//        super(rabatt);
-//    }
-
     /**
-     * Kontruktor
-     * @param rabatt
-     * @param vertrieb
+     * Kontruktor der nicht gebraucht wird
+     *
+     * @param rabatt   Der Rabatt der Gesellschaft.
+     * @param vertrieb Die Vertriebsnumer der Gesellschaft.
      */
     private GesellschaftMitLiz(double rabatt, int vertrieb) {
         super(rabatt);
         this.vertrieb = vertrieb;
     }
-    
-    /** 
+
+    /**
      * Kontruktor
-     * @param anschrift
-     * @param rabatt
-     * @param vertrieb
+     *
+     * @param anschrift Die Anschrift der Geselschaft.
+     * @param rabatt    Der Rabatt der Gesellschaft.
+     * @param vertrieb  Die Vertriebsnumer der Gesellschaft.
      */
     public GesellschaftMitLiz(Adresse anschrift, double rabatt, int vertrieb) {
-        super(rabatt);
+        this(rabatt, vertrieb);
         this.anschrift = anschrift;
-        this.vertrieb = vertrieb;
     }
 
     /**
@@ -70,8 +62,8 @@ public class GesellschaftMitLiz extends AKunde {
     }
 
     /**
-     * 
-     * @param vertrieb Die Vertriebsnummer
+     *
+     * @param vertrieb Die Vertriebsnummer wird übergaben.
      */
     public void setVertrieb(int vertrieb) {
         this.vertrieb = vertrieb;
@@ -88,7 +80,7 @@ public class GesellschaftMitLiz extends AKunde {
 
     /**
      *
-     * @param anschrift Die Adresse der Gesellschaft
+     * @param anschrift Die Adresse der Gesellschaft wird übergaben.
      */
     @Override
     public void setAnschrift(Adresse anschrift) {
@@ -106,11 +98,11 @@ public class GesellschaftMitLiz extends AKunde {
 
     /**
      *
-     * @param rabatt Der Rabatt der Gesellschaft
+     * @param rabatt Der Rabatt der Gesellschaft wird übergaben.
      */
     @Override
     public void setRabatt(double rabatt) {
-        this.rabatt = rabatt;
+        this.rabatt = STANDARD_RABATT;
     }
 
     /**
@@ -124,20 +116,21 @@ public class GesellschaftMitLiz extends AKunde {
 
     /**
      *
-     * @param nummer Die Kundennummer der Gesellschft
+     * @param nummer Die Kundennummer der Gesellschft wird übergaben.
      */
     @Override
     public void setNummer(String nummer) {
         this.nummer = nummer;
     }
-    
+
     @Override
     public String toString() {
         return //super.toString() + "\n" + 
-                "Gesellschaft Mit Lizenzvertrieb:" + "\n\tVertrieb = " + vertrieb + 
-                                                                 "\n\tRabatt = " + this.rabatt + " %" +
-                                                                 "\n\tAnschrift = " + this.anschrift + 
-                                                                 "\n\tNummer = " + this.nummer;
+                "Gesellschaft Mit Lizenzvertrieb:"
+                + "\n\tNummer = " + this.nummer
+                + "\n\tVertrieb = " + vertrieb
+                + "\n\tRabatt = " + this.rabatt + " %"
+                + "\nAnschrift: " + this.anschrift;
     }
 
 }

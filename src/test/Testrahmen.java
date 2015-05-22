@@ -12,7 +12,6 @@ import model.kunde.GesellschaftMitLiz;
 import model.kunde.Grossverbraucher;
 
 /**
- * Beschreibung:
  * In dieser Klasse wird das Userinterface umgesetzt.
  * Das System wird anhand von User-Eingaben getestet.
  *
@@ -35,6 +34,11 @@ public class Testrahmen {
     KundenNummerVergeber knv = KundenNummerVergeber.getInstance();
     Kundenverwaltung kv = new Kundenverwaltung();
 
+    /**
+     * Diese Methode wildet den Kern der User-Intraktion ab.
+     *
+     * @throws Exception
+     */
     public void start() throws Exception {
 
         Eingabe.init();
@@ -46,7 +50,7 @@ public class Testrahmen {
             System.out.println("\t(1) Einen neuen Endverbraucher anlegen");
             System.out.println("\t(2) Einen neuen Großverbracuher anlegen");
             System.out.println("\t(3) Eine neue Gesellschaft mit Lizenzvertrieb anlegen");
-            System.out.println("\t(4) Bestimmt Anzahl Kunden automatisch anlegen");
+            System.out.println("\t(4) Bestimmte Anzahl Kunden automatisch anlegen");
             System.out.println("\t(5) Die Kundenliste nach Kundennummer sortiert ausgeben");
             System.out.println("\t(6) Programm beenden");
 
@@ -67,14 +71,13 @@ public class Testrahmen {
                     Collections.sort(kv.KUNDENLISTE, new Kundenverwaltung());
                     for (Object item : kv.KUNDENLISTE) {
                         System.out.println(String.valueOf(item));
-                        System.out.println("");
                     }
                     break;
                 case 6:
                     weiter = false;
                     break;
                 default:
-                    System.err.println("Zahlen sind von 1-3 gültig.");
+                    System.err.println("Zahlen sind von 1-6 gültig.");
                     break;
             }
         } while (weiter);
@@ -82,6 +85,11 @@ public class Testrahmen {
         System.out.println("Programm beendet...");
     }
 
+    /**
+     * Handelt das manuelle anlegen eines Endverbrauchers.
+     *
+     * @throws Exception
+     */
     private void createEndverbraucher() throws Exception {
         AKunde e1 = Eingabe.liesEndverbraucher();
         e1.setNummer(knv.getKundennummer());
@@ -89,6 +97,11 @@ public class Testrahmen {
         System.out.println("Ein Endverbracuher wurde gespeichert.");
     }
 
+    /**
+     * Handelt das manuelle anlegen eines Großverbrauchers.
+     *
+     * @throws Exception
+     */
     private void createGroßverbraucher() throws Exception {
         AKunde g1 = Eingabe.liesGrossverbraucher();
         g1.setNummer(knv.getKundennummer());
@@ -96,6 +109,11 @@ public class Testrahmen {
         System.out.println("Ein Großverbraucher wurde gespeichert.");
     }
 
+    /**
+     * Handelt das manuelle anlegen einer Gesellschaft.
+     *
+     * @throws Exception
+     */
     private void createGesellschaft() throws Exception {
         AKunde ge1 = Eingabe.liesGesellschaft();
         ge1.setNummer(knv.getKundennummer());
@@ -103,6 +121,11 @@ public class Testrahmen {
         System.out.println("Eine Gesellschaft wurde gespeichert.");
     }
 
+    /**
+     * Erzeugt eine gewünscht Anzahl von Zufalls-Kunden.
+     *
+     * @throws Exception
+     */
     private void createKunden() throws Exception {
         System.out.println("Anzahl der Kunden eingeben");
         int anzahl = Eingabe.liesAnzahl();
@@ -114,19 +137,19 @@ public class Testrahmen {
             switch ((int) Math.floor((Math.random() * 3) + 1)) {
                 // Endverbraucher
                 case 1:
-                    temp = new Endverbraucher(new Adresse(i + 1 + ". Endverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), true);
+                    temp = new Endverbraucher(new Adresse(i + 1 + ". Endverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), 0, true);
                     temp.setNummer(knv.getKundennummer());
                     kv.neuEndverbraucher(temp);
                     break;
-                    // Großverbraucher
+                // Großverbraucher
                 case 2:
-                    temp = new Grossverbraucher(new Adresse(i + 1 + ". Großverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), (int) Math.floor((Math.random() * 100) + 1));
+                    temp = new Grossverbraucher(new Adresse(i + 1 + ". Großverbraucher", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), 5, (int) Math.floor((Math.random() * 100) + 1));
                     temp.setNummer(knv.getKundennummer());
                     kv.neuGrossverbraucher(temp);
                     break;
                 // Gesellschaft
                 case 3:
-                    temp = new GesellschaftMitLiz(new Adresse(i + 1 + ". Gesellschaft", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), (int) Math.floor((Math.random() * 100) + 1), (int) Math.floor((Math.random() * 100) + 1));
+                    temp = new GesellschaftMitLiz(new Adresse(i + 1 + ". Gesellschaft", "Hamburger Straße " + (int) Math.floor((Math.random() * 100) + 1), "10243", "Berlin"), 7, (int) Math.floor((Math.random() * 100) + 1));
                     temp.setNummer(knv.getKundennummer());
                     kv.neuGesellschaftMitLiz(temp);
                     break;

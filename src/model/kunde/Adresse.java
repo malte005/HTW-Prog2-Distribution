@@ -1,7 +1,6 @@
 package model.kunde;
 
 /**
- * Beschreibung:
  * Diese Klasse bildet das Objekt der Adresse ab.
  *
  * @author Malte Dammann
@@ -15,7 +14,7 @@ package model.kunde;
  * Java: 1.8.0_20; Java HotSpot(TM) 64-Bit
  *
  * @since 2015-05-06
- * @version 0.a
+ * @version 0.1
  *
  */
 public class Adresse {
@@ -27,10 +26,11 @@ public class Adresse {
 
     /**
      * Konstruktor der Ardesse
-     * @param name
-     * @param strasse_hnr
-     * @param plz
-     * @param ort
+     *
+     * @param name        Der Name des Kunden.
+     * @param strasse_hnr Die Straße und Hausnummer des Kudnen.
+     * @param plz         Die Postleitzahl des Kunden.
+     * @param ort         Der Ort des Kudnen.
      */
     public Adresse(String name, String strasse_hnr, String plz, String ort) {
         this.name = name;
@@ -40,7 +40,7 @@ public class Adresse {
     }
 
     /**
-     * 
+     *
      * @return Namen des Kunden wird zurückgegeben.
      */
     public String getName() {
@@ -49,7 +49,7 @@ public class Adresse {
 
     /**
      *
-     * @param name Der Name des Kunden
+     * @param name Der Name des Kunden wird übergeben.
      */
     public void setName(String name) {
         this.name = name;
@@ -65,7 +65,7 @@ public class Adresse {
 
     /**
      *
-     * @param strasse_hnr Die Straße und Hausnummer
+     * @param strasse_hnr Die Straße und Hausnummer werden übrgeben.
      */
     public void setStrasse_hnr(String strasse_hnr) {
         this.strasse_hnr = strasse_hnr;
@@ -81,7 +81,7 @@ public class Adresse {
 
     /**
      *
-     * @param plz Die Postleitzahl
+     * @param plz Die Postleitzahl wird übergeben.
      */
     public void setPlz(String plz) {
         this.plz = plz;
@@ -97,7 +97,7 @@ public class Adresse {
 
     /**
      *
-     * @param ort Der Ort des Kunden
+     * @param ort Der Ort des Kunden wird übergeben.
      */
     public void setOrt(String ort) {
         this.ort = ort;
@@ -105,7 +105,11 @@ public class Adresse {
 
     @Override
     public String toString() {
-        return "Adresse{" + "name=" + name + ", strasse_hnr=" + strasse_hnr + ", plz=" + plz + ", ort=" + ort + '}';
+        return "\n\tName = " + name
+                + "\n\tStrasse / Hausnummer = " + strasse_hnr
+                + "\n\tPLZ = " + plz
+                + "\n\tOrt = " + ort
+                + "\n----------------------------------------------";
     }
 
 }
